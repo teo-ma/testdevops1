@@ -25,3 +25,9 @@ steps:
     inlineScript: |
       az --version
       az account show
+      az vm create \
+        --resource-group myResourceGroup \
+        --name mytestdevopsVM \
+        --image UbuntuLTS \
+        --admin-username azureuser \
+        --generate-ssh-keys
