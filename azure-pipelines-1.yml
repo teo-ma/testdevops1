@@ -19,9 +19,8 @@ steps:
   displayName: 'Run a multi-line script'
 - task: AzureCLI@2
   inputs:
-    scriptType: 'ps'
+    scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
       az --version
-      az account show
-    powerShellErrorActionPreference: 'continue'
+            az account show
