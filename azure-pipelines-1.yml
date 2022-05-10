@@ -27,7 +27,7 @@ steps:
       az account show
       az vm create \
         --resource-group myResourceGroup \
-        --name mytestdevopsVM \
+        --name mytestdevopsVM2 \
         --image UbuntuLTS \
         --admin-username azureuser \
         --public-ip-address '""' \
