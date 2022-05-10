@@ -30,5 +30,5 @@ steps:
         --name mytestdevopsVM2 \
         --image UbuntuLTS \
         --admin-username azureuser \
-        --public-ip-address '""' \
+        --public-ip-address '' \
         --generate-ssh-keys
