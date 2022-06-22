@@ -1,0 +1,41 @@
+
+
+
+
+
+
+
+
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Teo‘s  Azure Internal Consumption(e0c6ee30-5425-4a43-b5c7-5cedadc57797)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az --version
+      az account show
+      az deployment group create \
+         --resource-group storageRG \
+         --template-spec "/subscriptions/e0c6ee30-5425-4a43-b5c7-5cedadc57797/resourceGroups/templateSpecRG/providers/Microsoft.Resources/templateSpecs/storageSpec/versions/2.0" \
+         --parameters storageNamePrefix="demo2"
+
+
